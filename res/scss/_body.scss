@@ -1,0 +1,748 @@
+body {
+  background: $bg_color;
+  font-family: 'Roboto', sans-serif;
+  color: $color1;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $color3;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+a {
+  color: $color3;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  border-bottom: solid 1px;
+}
+
+i, a {
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.row {
+  margin: 0;
+}
+
+.row-header {
+  background-color: $color3;
+  padding: 2em 0 5em 0;
+  color: $color2;
+  > div {
+    @media (max-width: 991px) { //Random breakpoint
+      text-align: center;
+    }
+    > p {
+      @media (max-width: 991px) { //Random breakpoint
+        padding-top: 1em;
+      }
+    }
+  }
+}
+
+.flex {
+  @include flexbox;
+  @include flex-just(space-between);
+  @media (max-width: 991px) { //Random breakpoint
+    display: block;
+    & > * {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+    & > img {
+      width: auto !important;
+      display: block;
+      margin: 0 auto !important;
+    }
+  }
+}
+
+.sub-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 500;
+  //height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  display: block;
+  height: 0;
+  transition: all 0.5s cubic-bezier(.25, .8, .25, 1);
+}
+
+.main {
+  position: relative;
+  height: 75vh;
+  margin-top: -3em;
+  margin-bottom: 50px;
+  padding: 2em 0 0 0;
+  background-color: $color2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  @media (max-width: 991px) { //Random breakpoint
+    height: auto;
+  }
+  > * {
+    padding: 0 2em;
+  }
+  > header {
+    background-color: darken($color2, 1%);
+    border-bottom: 1px solid #eef1f4;
+    margin-bottom: 2em;
+    > h1 {
+      margin-bottom: 50px;
+    }
+  }
+  h2 {
+    margin-bottom: 2em;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    @include flexbox;
+    list-style: none;
+    li {
+      margin-right: 2em;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      a {
+        color: $color1;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #eef1f4;
+        &:active,
+        &:focus,
+        &:hover,
+        &.active {
+          color: $color3;
+          text-decoration: none;
+          border-bottom: 1px solid $color3;
+        }
+        &.active {
+          cursor: default;
+        }
+      }
+
+    }
+  }
+  #map {
+    height: 35vh;
+  }
+  .main-content > .flex {
+    @include justify-content(center);
+    @include align-items(center);
+    width: 100%;
+    > div {
+      position: relative;
+      width: 25%;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      border-radius: 2px;
+      margin-right: 2em;
+      margin-top: 4em;
+      transition: all .3s cubic-bezier(.25, .8, .25, 1);
+      > * {
+        padding: 0 2em;
+      }
+      header {
+        color: $color2;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        border-radius: 2px 2px 0 0;
+        padding: .5em 0;
+        margin-bottom: .5em;
+      }
+      &.offer-1 {
+        header {
+          background-color: $color-offer-1;
+        }
+        a {
+          color: $color-offer-1;
+        }
+        button {
+          background-color: $color-offer-1;
+          &:hover,
+          &:active {
+            background-color: darken($color-offer-1, 10%);
+          }
+        }
+        &.chosen {
+          background-color: $color-offer-1;
+        }
+        .checkmark {
+          stroke: $color-offer-1;
+        }
+      }
+      &.offer-2 {
+        header {
+          background-color: $color-offer-2;
+        }
+        a {
+          color: $color-offer-2;
+        }
+        button {
+          background-color: $color-offer-2;
+          &:hover,
+          &:active {
+            background-color: darken($color-offer-2, 10%);
+          }
+        }
+        &.chosen {
+          background-color: $color-offer-2;
+        }
+        .checkmark {
+          stroke: $color-offer-2;
+        }
+      }
+      &.offer-3 {
+        header {
+          background-color: $color-offer-3;
+        }
+        a {
+          color: $color-offer-3;
+        }
+        button {
+          background-color: $color-offer-3;
+          &:hover,
+          &:active {
+            background-color: darken($color-offer-3, 10%);
+          }
+        }
+        &.chosen {
+          background-color: $color-offer-3;
+        }
+        .checkmark {
+          stroke: $color-offer-3;
+        }
+      }
+      &.offer-4 {
+        header {
+          background-color: $color5;
+        }
+        a {
+          color: $color5;
+        }
+        button {
+          background-color: $color5;
+          &:hover,
+          &:active {
+            background-color: darken($color5, 10%);
+          }
+        }
+        &.chosen {
+          background-color: $color5;
+        }
+        .checkmark {
+          stroke: $color5;
+        }
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20), 0 8px 8px rgba(0, 0, 0, 0.18);
+      }
+      &.chosen {
+        color: $color2 !important;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        a {
+          color: $color2 !important;
+          border-bottom: 1px solid $color2;
+          &:hover,
+          &:active {
+            opacity: .8;
+          }
+        }
+        button {
+          animation: transparency .2s linear;
+          opacity: 0;
+          z-index: -1;
+        }
+        .checkmark-wrapper {
+          opacity: 1;
+          .checkmark {
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s;
+          }
+          .checkmark__circle {
+            animation: stroke .6s $curve forwards;
+          }
+          .checkmark__check {
+            animation: stroke .3s $curve .8s forwards;
+          }
+        }
+      }
+      span {
+        font-size: 2em;
+        line-height: normal;
+      }
+      .offer-desc {
+        margin: 1em 0;
+        a {
+          display: inline-block;
+        }
+      }
+      button {
+        margin-bottom: 2em;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        opacity: 1;
+        color: $color2;
+        padding: .5em 1em;
+        position: relative;
+        z-index: 500;
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      }
+      .checkmark-wrapper {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 100px;
+        height: 0;
+        opacity: 0;
+
+        .checkmark__circle {
+          stroke-dasharray: 166;
+          stroke-dashoffset: 166;
+          stroke-width: 2;
+          stroke-miterlimit: 10;
+          stroke: $color2;
+          fill: none;
+        }
+
+        .checkmark {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          display: block;
+          stroke-width: 2;
+          stroke-miterlimit: 10;
+          padding: initial;
+          margin: 10% auto;
+          box-shadow: inset 0px 0px 0px $color2;
+        }
+
+        .checkmark__check {
+          transform-origin: 50% 50%;
+          stroke-dasharray: 48;
+          stroke-dashoffset: 48;
+        }
+      }
+    }
+    form {
+      width: 80%;
+      margin-top: 4em;
+      .group {
+        position: relative;
+        width: 100%;
+        padding: 2em 1em;
+        background-color: $bg_color;
+      }
+    }
+  }
+}
+
+.breadcrumbs {
+  padding: 2em;
+  counter-reset: compteListe;
+  @media (max-width: 991px) { //Random breakpoint
+    display: none;
+  }
+  > div {
+    line-height: 2em;
+    h3 {
+      padding-bottom: 1em !important;
+      &.current,
+      &.done {
+        border-left: 2px solid $color3;
+      }
+    }
+  }
+  > div > * {
+    border-left: 2px solid lighten($color1, 30%);
+    padding: 0 2em !important;
+  }
+  ul {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0;
+    border: 0;
+    position: relative;
+    li {
+      color: lighten($color1, 30%);
+      border-left: 2px solid lighten($color1, 30%);
+      padding: 0 0 5px 2em;
+      position: relative;
+      &:before {
+        counter-increment: compteListe;
+        content: counter(compteListe);
+        display: inline-block;
+        font-size: .75em;
+        width: 1.75em;
+        height: 1.75em;
+        position: absolute;
+        left: -11px;
+        top: 7px;
+        border-radius: 50%;
+        line-height: 1.65em;
+        padding-left: 6px;
+        background-color: $color2;
+        color: lighten($color1, 30%);
+        border: 1px solid lighten($color1, 30%);
+      }
+      &.current {
+        color: $color3;
+        border-left: 2px solid $color3;
+        &:after {
+          content: '';
+          display: inline-block;
+          font-size: .75em;
+          width: 1.75em;
+          height: 1.75em;
+          position: absolute;
+          left: -11px;
+          top: 7px;
+          border-radius: 50%;
+          z-index: -1;
+          background-color: $color3;
+          transform: scale(0);
+          opacity: 0;
+          animation: sonarWave 2s linear infinite;
+        }
+        &:before {
+          color: $color2;
+          background-color: $color3;
+          border-color: $color3;
+        }
+      }
+      &.done {
+        color: $color1;
+        border-left: 2px solid $color3;
+        &:before {
+          font-family: FontAwesome;
+          content: "\f00c";
+          color: $color2;
+          background-color: $color3;
+          border-color: $color3;
+          padding-left: 4px;
+        }
+        span {
+          font-size: 11px;
+          display: block;
+          line-height: normal;
+          color: lighten($color1, 30%);
+        }
+      }
+    }
+  }
+  ul:nth-of-type(1) {
+    li:before {
+
+    }
+  }
+}
+
+#map {
+  width: 50%;
+  height: 50vh;
+}
+
+.side-content {
+  width: 50%;
+  padding-left: 2em;
+  text-align: center;
+  @media (max-width: 991px) { //Random breakpoint
+    padding-left: 0;
+    margin-bottom: 2em !important;
+  }
+  .encart {
+    display: block;
+    width: 100%;
+    background-color: $bg_color;
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+  .inner-title {
+    font-size: 1.5em;
+    margin-bottom: 3em;
+  }
+  .myKilometer {
+    font-weight: 700;
+  }
+  .slider-range {
+    margin-top: 1em;
+    @media (max-width: 991px) { //Random breakpoint
+      @include flexbox;
+      > * {
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.nav-bot {
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  @media (max-width: 991px) { //Random breakpoint
+    text-align: center;
+    position: relative;
+  }
+  > * {
+    padding: 2em;
+    background-color: $color5;
+    color: $color2;
+    width: 50%;
+    display: block;
+    margin-top: 2em;
+    border-bottom: 0;
+    &:last-of-type {
+      background-color: $color3;
+      text-align: right;
+      @media (max-width: 991px) { //Random breakpoint
+        text-align: center;
+      }
+      i {
+        margin-right: 0;
+        margin-left: .75em;
+      }
+      &:active,
+      &:focus,
+      &:hover,
+      &.active {
+        background-color: darken($color3, 10%);
+        i {
+          transform: translateX(10px);
+        }
+      }
+    }
+    &:active,
+    &:focus,
+    &:hover,
+    &.active {
+      color: $color2;
+      text-decoration: none;
+      background-color: darken($color5, 10%);
+      border-bottom: 0;
+      i {
+        transform: translateX(-10px);
+      }
+    }
+    > div {
+      font-size: 1.5em;
+      display: block;
+      margin-top: 5px;
+      i {
+        margin-right: .75em;
+      }
+    }
+  }
+}
+
+.wrapper-footer {
+  transition: all .3s cubic-bezier(.25, .8, .25, 1);
+  &.is-up {
+    position: fixed;
+    z-index: 600;
+    bottom: 0;
+  }
+  &.is-down {
+    position: fixed;
+    overflow: hidden;
+    bottom: -350px;
+  }
+  .row-footer {
+    background-color: $color2;
+    padding: 1em;
+    cursor: pointer;
+    &:active,
+    &:focus,
+    &:hover,
+    &.active {
+      .wrapper-btn-slide i {
+        transform: translateY(-10px);
+      }
+    }
+    .wrapper-btn-slide {
+      text-align: center;
+    }
+    .flex {
+      @media (max-width: 991px) { //Random breakpoint
+        @include flexbox;
+      }
+      > div {
+        text-align: center;
+        width: 20%;
+        @media (max-width: 991px) { //Random breakpoint
+          width: 20%;
+        }
+        i {
+          display: block;
+          font-size: 1.25em;
+          margin-bottom: 6px;
+        }
+        .details {
+          padding-top: 2em;
+        }
+      }
+    }
+  }
+  .testimony {
+    @include align-items(center);
+    margin-top: 2em;
+    > img {
+      width: 15%;
+      margin-right: 5%;
+    }
+    > p {
+      width: 80%;
+      font-size: 1.25em;
+      font-weight: 300;
+      line-height: 40px;
+      font-style: italic;
+      > span {
+        font-style: normal;
+        font-weight: 700;
+        display: block;
+      }
+    }
+  }
+}
+
+/* ********************* Material Effects */
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+
+  background: #fff;
+  opacity: .2;
+}
+
+.ink.animate {
+  -webkit-animation: ripple .5s linear;
+  -moz-animation: ripple .5s linear;
+  -ms-animation: ripple .5s linear;
+  -o-animation: ripple .5s linear;
+  animation: ripple .5s linear;
+}
+
+@keyframes transparency {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+
+@-moz-keyframes ripple {
+  100% {
+    opacity: 0;
+    -moz-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+
+@-ms-keyframes ripple {
+  100% {
+    opacity: 0;
+    -ms-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+
+@-o-keyframes ripple {
+  100% {
+    opacity: 0;
+    -o-transform: scale(2.5);
+    transform: scale(2.5);
+  }
+}
+
+@keyframes sonarWave {
+  from {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px $color2;
+  }
+}
