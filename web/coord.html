@@ -63,91 +63,95 @@
     <div class="row">
         <div class="col-md-8 main">
             <header>
-    <h1>Mon support internet</h1>
-    <h2>Je choisis une offre</h2>
+    <h1>Je confirme mes coordonnées et celles de mon établissement</h1>
+    <!--<h2>Je choisis une offre</h2>
     <ul>
         <li><a href="#" class="active">Je n'ai pas de site</a></li>
         <li><a href="support-alt.html">J’ai déjà un site</a></li>
-    </ul>
+    </ul>-->
 </header>
 <div class="flex main-content">
     <div class="flex">
-        <div class="offer-1">
-            <header>
-                Flyer
-            </header>
-            <div class="offer-price">
-                <span>170€</span>/mois
+        <form class="form-coord">
+            <div class="row">
+                <div class="col-md-5 col-xs-12">
+                    <div class="group-coord-1">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Mon nom et prénom</label>
+                    </div>
+                    <div class="group-coord-2">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Mon adresse mail</label>
+                    </div>
+                    <div class="group-coord-3 form-tel flex">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="tel-1">
+                            <input type="text" required onkeypress="return isNumberKey(event)">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Téléphone</label>
+                        </div>
+                        <div class="tel-2">
+                            <div class="mdl-selectfield">
+                                <label>Standard Select</label>
+                                <select class="browser-default">
+                                    <option value="" selected>Mobile</option>
+                                    <option value="1">Fixe</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-2 col-xs-12">
+                    <div class="group-coord-4">
+                        <input type="text" required disabled>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Adresse de mon établissement</label>
+                    </div>
+                    <div class="group-coord-5 form-tel flex">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <div class="tel-1">
+                            <input type="text" required onkeypress="return isNumberKey(event)">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Téléphone</label>
+                        </div>
+                        <div class="tel-2">
+                            <div class="mdl-selectfield">
+                                <label>Standard Select</label>
+                                <select class="browser-default">
+                                    <option value="" selected>Mobile</option>
+                                    <option value="1">Fixe</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-coord-6">
+                        <input type="text" required class="error" onkeypress="return isNumberKey(event)">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>N° SIRET</label>
+                    </div>
+                </div>
             </div>
-            <div class="offer-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                <a href="#">En savoir plus</a>
-            </div>
-            <button class="btn-offer">
-                Choisir cette offre
-            </button>
-            <div class="checkmark-wrapper">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-            </div>
-
-        </div>
-        <div class="offer-2 chosen">
-            <header>
-                Premium
-            </header>
-            <div class="offer-price">
-                <span>170€</span>/mois
-            </div>
-            <div class="offer-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                <a href="#">En savoir plus</a>
-            </div>
-            <button class="btn-offer">
-                Choisir cette offre
-            </button>
-            <div class="checkmark-wrapper">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-            </div>
-        </div>
-        <div class="offer-3">
-            <header>
-                Optimum
-            </header>
-            <div class="offer-price">
-                <span>170€</span>/mois
-            </div>
-            <div class="offer-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                <a href="#">En savoir plus</a>
-            </div>
-            <button class="btn-offer">
-                Choisir cette offre
-            </button>
-            <div class="checkmark-wrapper">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 <div class="flex nav-bot">
-    <a href="index.html" class="nav-bot-left ripple-effect">
+    <a href="google.html" class="nav-bot-left ripple-effect">
         Étape précédente
         <div class="link-prev"><i class="fa fa-long-arrow-left"
-                                  aria-hidden="true"></i>Zone de chalandise
+                                  aria-hidden="true"></i>Google
         </div>
     </a>
-    <a href="google.html" class="nav-bot-right ripple-effect">
+    <a href="#" class="nav-bot-right ripple-effect">
         Étape suivante
-        <div class="link-prev">Google<i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
+        <div class="link-prev">Récapitulatif<i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
     </a>
 </div>
         </div>

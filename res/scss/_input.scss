@@ -9,6 +9,11 @@ input 				{
 }
 input:focus 		{ outline:none;border: 0; }
 
+.form-tel i {
+  padding: 1em 1em 0 0;
+  font-size: 1.5em;
+}
+
 /* LABEL ======================================= */
 label 				 {
   color:$color1;
@@ -26,10 +31,36 @@ label 				 {
 input:focus ~ label, input:valid ~ label 		{
   top:10%;
   font-size:.825em;
-  color:$color3;
 }
 
-/* BOTTOM BARS ================================= */
+.form-coord {
+  input:focus ~ label, input:valid ~ label 		{
+    top:-15px;
+  }
+  input:focus ~ label {
+    color:$color3!important;
+    opacity:1!important;
+  }
+  input:valid ~ label {
+    color:$color1;
+    opacity:.5;
+  }
+}
+
+input[type="text"]:disabled ~ label,
+input[type="text"]:disabled {
+  opacity: .5;
+}
+
+input[type="text"]:disabled {
+  border-bottom-style: dotted;
+}
+
+input[type="text"].error {
+  border-bottom-color: $color-offer-2;
+}
+
+  /* BOTTOM BARS ================================= */
 .bar 	{ position:relative; display:block; width:100%; }
 .bar:before, .bar:after 	{
   content:'';
@@ -70,6 +101,53 @@ input:focus ~ .highlight {
   -webkit-animation:inputHighlighter 0.3s ease;
   -moz-animation:inputHighlighter 0.3s ease;
   animation:inputHighlighter 0.3s ease;
+}
+
+/* ==========  Select Field Variables ========== */
+$select-background-color: transparent;
+$select-color: rgba($color1, 0.26) !default;
+$select-padding: 4px;
+
+/* ==========  Select Field ========== */
+
+/* Style Select Field */
+select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 17px 10px 3px 5px;
+  color: $color1;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+/* Remove focus */
+select:focus {
+  outline: none}
+
+/* Hide label */
+.mdl-selectfield label {display: none;}
+/* Use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;}
+.mdl-selectfield {
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 1.75em;
+    right: 0;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: .375em solid $color1;
+    pointer-events: none;
+  }
 }
 
 

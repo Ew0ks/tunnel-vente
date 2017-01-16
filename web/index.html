@@ -10,6 +10,14 @@
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script type="text/javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -100,7 +108,7 @@
                     </span>
         <p class="inner-title">Rayon de ciblage : <span class="myKilometer">25 kilomètres</span></p>
         <div class="rkmd-slider slider-discrete slider-lightBlue">
-            <input type="range" min="0" max="100" value="25">
+            <input type="range" min="0" max="50" value="50">
         </div>
         <div class="slider-range flex">
             <span>0 km</span>

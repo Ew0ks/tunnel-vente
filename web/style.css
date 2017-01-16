@@ -6052,6 +6052,10 @@ input:focus {
   outline: none;
   border: 0; }
 
+.form-tel i {
+  padding: 1em 1em 0 0;
+  font-size: 1.5em; }
+
 /* LABEL ======================================= */
 label {
   color: #353535;
@@ -6067,8 +6071,28 @@ label {
 /* active state */
 input:focus ~ label, input:valid ~ label {
   top: 10%;
-  font-size: .825em;
-  color: #0066cc; }
+  font-size: .825em; }
+
+.form-coord input:focus ~ label, .form-coord input:valid ~ label {
+  top: -15px; }
+
+.form-coord input:focus ~ label {
+  color: #0066cc !important;
+  opacity: 1 !important; }
+
+.form-coord input:valid ~ label {
+  color: #353535;
+  opacity: .5; }
+
+input[type="text"]:disabled ~ label,
+input[type="text"]:disabled {
+  opacity: .5; }
+
+input[type="text"]:disabled {
+  border-bottom-style: dotted; }
+
+input[type="text"].error {
+  border-bottom-color: #f44336; }
 
 /* BOTTOM BARS ================================= */
 .bar {
@@ -6112,6 +6136,48 @@ input:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   -moz-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease; }
+
+/* ==========  Select Field Variables ========== */
+/* ==========  Select Field ========== */
+/* Style Select Field */
+select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 17px 10px 3px 5px;
+  color: #353535;
+  border: none;
+  border-bottom: 1px solid #757575; }
+
+/* Remove focus */
+select:focus {
+  outline: none; }
+
+/* Hide label */
+.mdl-selectfield label {
+  display: none; }
+
+/* Use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.mdl-selectfield {
+  position: relative; }
+  .mdl-selectfield:after {
+    position: absolute;
+    top: 1.75em;
+    right: 0;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: 0.375em solid #353535;
+    pointer-events: none; }
 
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
@@ -6424,6 +6490,11 @@ i, a {
         width: 100%;
         padding: 2em 1em;
         background-color: #eef1f4; }
+  .main div[class*="group-coord"] {
+    position: relative;
+    margin-bottom: 2em; }
+    .main div[class*="group-coord"] .tel-2 {
+      width: 30%; }
 
 .breadcrumbs {
   padding: 2em;

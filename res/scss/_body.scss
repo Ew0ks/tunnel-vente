@@ -365,6 +365,11 @@ i, a {
       }
     }
   }
+  div[class*="group-coord"] {
+    position: relative;
+    margin-bottom:2em;
+    .tel-2 {width: 30%;}
+  }
 }
 
 .breadcrumbs {

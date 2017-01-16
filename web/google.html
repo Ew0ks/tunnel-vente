@@ -10,6 +10,14 @@
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script type="text/javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -159,7 +167,7 @@
                                   aria-hidden="true"></i>Support internet
         </div>
     </a>
-    <a href="#" class="nav-bot-right ripple-effect">
+    <a href="coord.html" class="nav-bot-right ripple-effect">
         Étape suivante
         <div class="link-prev">Youtube<i class="fa fa-long-arrow-right" aria-hidden="true"></i></div>
     </a>
