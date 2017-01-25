@@ -48,15 +48,19 @@ input:focus ~ label, input:valid ~ label 		{
 }
 
 input[type="text"]:disabled ~ label,
-input[type="text"]:disabled {
+input[type="text"]:disabled,
+input[type="number"]:disabled ~ label,
+input[type="number"]:disabled {
   opacity: .5;
 }
 
-input[type="text"]:disabled {
+input[type="text"]:disabled,
+input[type="number"]:disabled {
   border-bottom-style: dotted;
 }
 
-input[type="text"].error {
+input[type="text"].error,
+input[type="number"].error {
   border-bottom-color: $color-offer-2;
 }
 

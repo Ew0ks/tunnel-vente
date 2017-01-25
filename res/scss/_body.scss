@@ -34,8 +34,6 @@ a {
 a:hover,
 a:active,
 a:focus {
-  text-decoration: none;
-  border-bottom: solid 1px;
 }
 
 i, a {
@@ -54,21 +52,27 @@ i, a {
   padding: 2em 0 5em 0;
   color: $color2;
   > div {
-    @media (max-width: 991px) { //Random breakpoint
+    @media (max-width: 1024px) { //Random breakpoint
       text-align: center;
     }
     > p {
-      @media (max-width: 991px) { //Random breakpoint
+      @media (max-width: 1024px) { //Random breakpoint
         padding-top: 1em;
       }
     }
   }
 }
 
+.wrapper > .row {
+  @media (max-width: 1024px) { //Random breakpoint
+    padding-bottom: 5em;
+  }
+}
+
 .flex {
   @include flexbox;
   @include flex-just(space-between);
-  @media (max-width: 991px) { //Random breakpoint
+  @media (max-width: 1024px) { //Random breakpoint
     display: block;
     & > * {
       width: 100% !important;
@@ -103,8 +107,9 @@ i, a {
   background-color: $color2;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-  @media (max-width: 991px) { //Random breakpoint
+  @media (max-width: 1024px) { //Random breakpoint
     height: auto;
+    width: 100%;
   }
   > * {
     padding: 0 2em;
@@ -325,6 +330,9 @@ i, a {
         bottom: 100px;
         height: 0;
         opacity: 0;
+        @media (max-width: 1024px) { //Random breakpoint
+          bottom: 170px;
+        }
 
         .checkmark__circle {
           stroke-dasharray: 166;
@@ -367,15 +375,55 @@ i, a {
   }
   div[class*="group-coord"] {
     position: relative;
-    margin-bottom:2em;
-    .tel-2 {width: 30%;}
+    margin-bottom: 2em;
+    .tel-2 {
+      width: 30%;
+    }
+  }
+  #page_form .row div[class*="col-md"] > p {
+    padding-left: 2em;
+  }
+  #costs {
+    width: 100%;
+    background-color: $bg_color;
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+  #page_form {
+    #recap_duration,
+    .group-coord-2 {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(flex-start);
+      label {
+        display: block;
+        position: relative;
+        width: 90%;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: 10%;
+        margin: 0;
+        &:focus,
+        &:valid {
+          ~ label {
+            position: relative;
+            font-size: 1em !important;
+            color: initial !important;
+            opacity: 1 !important;
+            top: initial;
+          }
+        }
+      }
+    }
   }
 }
 
 .breadcrumbs {
   padding: 2em;
   counter-reset: compteListe;
-  @media (max-width: 991px) { //Random breakpoint
+  @media (max-width: 1024px) { //Random breakpoint
     display: none;
   }
   > div {
@@ -481,7 +529,7 @@ i, a {
   width: 50%;
   padding-left: 2em;
   text-align: center;
-  @media (max-width: 991px) { //Random breakpoint
+  @media (max-width: 1024px) { //Random breakpoint
     padding-left: 0;
     margin-bottom: 2em !important;
   }
@@ -501,7 +549,7 @@ i, a {
   }
   .slider-range {
     margin-top: 1em;
-    @media (max-width: 991px) { //Random breakpoint
+    @media (max-width: 1024px) { //Random breakpoint
       @include flexbox;
       > * {
         width: auto !important;
@@ -515,7 +563,7 @@ i, a {
   position: absolute;
   bottom: 0;
   width: 100%;
-  @media (max-width: 991px) { //Random breakpoint
+  @media (max-width: 1024px) { //Random breakpoint
     text-align: center;
     position: relative;
   }
@@ -530,7 +578,7 @@ i, a {
     &:last-of-type {
       background-color: $color3;
       text-align: right;
-      @media (max-width: 991px) { //Random breakpoint
+      @media (max-width: 1024px) { //Random breakpoint
         text-align: center;
       }
       i {
@@ -572,15 +620,16 @@ i, a {
 
 .wrapper-footer {
   transition: all .3s cubic-bezier(.25, .8, .25, 1);
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
   &.is-up {
-    position: fixed;
     z-index: 600;
-    bottom: 0;
+    height: auto;
   }
   &.is-down {
-    position: fixed;
     overflow: hidden;
-    bottom: -350px;
+    height: 110px;
   }
   .row-footer {
     background-color: $color2;
@@ -598,13 +647,13 @@ i, a {
       text-align: center;
     }
     .flex {
-      @media (max-width: 991px) { //Random breakpoint
+      @media (max-width: 1024px) { //Random breakpoint
         @include flexbox;
       }
       > div {
         text-align: center;
         width: 20%;
-        @media (max-width: 991px) { //Random breakpoint
+        @media (max-width: 1024px) { //Random breakpoint
           width: 20%;
         }
         i {
