@@ -1,0 +1,28 @@
+{% extends "includes/base.html" %}
+{% block title %}Portail d'achat réseaux{% endblock %}
+{% block description %}void{% endblock %}
+
+
+{% block body %}
+<div class="wrapper">
+    <div class="sub-overlay"></div>
+    <div class="row row-header">
+        <div class="col-md-8 col-md-offset-2 flex">
+            <img src="img/logo-geolid.png" height="25" width="190"/>
+            <p>Nos conseillers sont à votre écoute au <strong>04 82 53 57 50</strong></p>
+        </div>
+    </div>
+    <aside class="col-md-2 breadcrumbs">
+        {% include "includes/_breadcrumbs.html" %}
+    </aside>
+    <div class="row">
+        <div class="col-md-8 main">
+            {% include "includes/_main-recap.html" %}
+        </div>
+    </div>
+    <div class="wrapper-footer is-down">
+        {% include "includes/_footer.html" %}
+    </div>
+</div>
+
+{% endblock %}
